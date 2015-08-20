@@ -1,0 +1,7 @@
+---
+applications:
+- name: golang-scale
+  memory: 16M 
+  random-route: true
+  command: golang-scale-demo 
+

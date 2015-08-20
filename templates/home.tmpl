@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-nr-min.css" />
+  <Title>Cloud Foundry Go Demonstration</Title>
+  </head>
+
+  <body style="margin: 20px;">
+    <h1>Pivotal Web Service (PWS) Cloud Foundry Go Demo</h1>
+	<P>This is a simple Golang application deployed on Pivotal Web Services. The application is written using the martini framework. It is best viewed side by side in the apps manager web console to see the ease of scaling and recovery. Try the following:</P>
+	<UL>
+	<LI>scale an application using <code>cf scale</code> from the command line or scale using the apps manager webconsole.</li>
+	<LI>Kill an instance using the kill link below. See how the events are captured on the console and how it automatically recovers.</li>
+	<LI>Return to the app root in the browser and see that you can still access the application even though an instance has crashed</LI>
+	<LI>Look at the stats about the current instance below. Pivotal Cloud Foundry deploys the application across multiple VMs automatically.
+	</UL>
+	
+    <h2>App Instance ID: {{.Instance}}</h2>
+    <h2>App Instance Address: {{.Instance_addr}}</h2>
+
+    <P><A href="/kill">Kill an instance</A></P>
+
+<h2>How much memory is the app using?</h2>
+<P>Pivotal Cloud Foundry is incredibly efficient for Go applications. A non-trivial application can run in as little as 64 MB. In this demo, each instance runs in 16 MB. This means on a 4 GB VM you could run over 200 instances of a web application on that single VM</P> 
+  </body>
+</html>
+
+
